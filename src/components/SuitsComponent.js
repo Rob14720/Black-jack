@@ -1,4 +1,4 @@
-import faces from "../data/Faces.mjs";
+import faces from "../data/Faces.js";
 
 const faceSuit = [
     "Diamond",
@@ -12,9 +12,13 @@ function Suits(arr) {
     for(let i = 0; i < arr.length; i++){
         const face = Math.random(faces[i]);
         const suit = Math.random(faceSuit[i]);
-        console.log(suit);
+        return `${face} + ${suit}`;
     }
     
 };
 
-export default Suits;
+function HitButton() {
+    return <button onClick={Suits}>Hit me!</button>
+}
+
+export default HitButton;
